@@ -18,22 +18,23 @@ print(db_host, db_user, db_password, db_name)
 
 @app.route('/')
 def index():
-    connection = pymysql.connect(host=db_host,
-                    user=db_user,
-                    password=db_password,
-                    database=db_name,
-                    # ssl_mode="VERIFY_IDENTITY",
-                    ssl={
-                        "ca": "/etc/ssl/cert.pem"
-                    }
-                    )
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM students;")
-    data = cursor.fetchall()
-    cursor.close()
-    connection.close()
+    # connection = pymysql.connect(host=db_host,
+    #                 user=db_user,
+    #                 password=db_password,
+    #                 database=db_name,
+    #                 # ssl_mode="VERIFY_IDENTITY",
+    #                 ssl={
+    #                     "ca": "/etc/ssl/cert.pem"
+    #                 }
+    #                 )
+    # cursor = connection.cursor()
+    # cursor.execute("SELECT * FROM students;")
+    # data = cursor.fetchall()
+    # cursor.close()
+    # connection.close()
 
-    return str(data)
+    # return str(data)
+    return "Hello World"
 
 if __name__ == '__main__':
     app.run(debug=True)
