@@ -24,7 +24,7 @@ def index():
                     database=db_name,
                     # ssl_mode="VERIFY_IDENTITY",
                     ssl={
-                        "ca": "/api/cacert.pem"
+                        "ca": "/etc/ssl/cert.pem"
                     }
                     )
     cursor = connection.cursor()
