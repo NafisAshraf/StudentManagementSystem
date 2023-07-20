@@ -1,5 +1,5 @@
 from flask import Flask
-import mysql.connector as sql
+import pymysql
 import os
 from dotenv import load_dotenv
 
@@ -14,16 +14,18 @@ db_user = os.getenv("USER")
 db_password = os.getenv("PASSWORD")
 db_name = os.getenv("DATABASE")
 
-
-
-
+print(db_host, db_user, db_password, db_name)
 
 @app.route('/')
 def index():
-    connection = sql.connect(host=db_host,
+    connection = pymysql.connect(host=db_host,
                     user=db_user,
                     password=db_password,
-                    database=db_name
+                    database=db_name,
+                    # ssl_mode="VERIFY_IDENTITY",
+                    ssl={
+                        "ca": "cacert.pem"
+                    }
                     )
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM students;")
@@ -31,7 +33,7 @@ def index():
     cursor.close()
     connection.close()
 
-    return data
+    return str(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
