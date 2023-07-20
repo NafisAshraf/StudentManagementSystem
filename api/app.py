@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 db_host = os.getenv("HOST")
-db_user = os.getenv("USERNAME")
+db_user = os.getenv("USER")
 db_password = os.getenv("PASSWORD")
 db_name = os.getenv("DATABASE")
 
@@ -20,10 +20,10 @@ db_name = os.getenv("DATABASE")
 
 @app.route('/')
 def index():
-    connection = sql.connect(host="aws.connect.psdb.cloud",
-                   database="mydb",
-                   user="ry3kkjmkjqq2rwwpirkf",
-                   password="pscale_pw_xIx82RyWJUe9vx24UDnw1C5B5KzVAtPBnsUefkVBG53",
+    connection = sql.connect(host=db_host,
+                    user=db_user,
+                    password=db_password,
+                    database=db_name
                     )
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM students;")
