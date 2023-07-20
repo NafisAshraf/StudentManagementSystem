@@ -1,40 +1,30 @@
 from flask import Flask
+import mysql.connector as sql
+import os
+from dotenv import load_dotenv
 
-# from dotenv import load_dotenv
-# import os
-# import MySQLdb
+load_dotenv()
+
 
 
 app = Flask(__name__)
-# load_dotenv()
+
+db_host = os.getenv("HOST")
+db_user = os.getenv("USERNAME")
+db_password = os.getenv("PASSWORD")
+db_name = os.getenv("DATABASE")
 
 
-# connection = MySQLdb.connect(
-#   host= os.getenv("HOST"),
-#   user=os.getenv("USERNAME"),
-#   passwd= os.getenv("PASSWORD"),
-#   db= os.getenv("DATABASE"),
-#   autocommit = True,
-#   ssl_mode = "VERIFY_IDENTITY"
-#   ssl      = {
-#     "ca": "/etc/ssl/cert.pem"
-#   }
-# )
-
-
-
-import mysql.connector as sql
-
-connection = sql.connect(host="aws.connect.psdb.cloud",
-                   database="mydb",
-                   user="5gas9f8r4es5wgounj1y",
-                   password="pscale_pw_EeQP6Q6aACAEuRnZm6wBOL0AyjNwLEsjr711zcAulaj",
-                    )
 
 
 
 @app.route('/')
 def index():
+    connection = sql.connect(host="aws.connect.psdb.cloud",
+                   database="mydb",
+                   user="ry3kkjmkjqq2rwwpirkf",
+                   password="pscale_pw_xIx82RyWJUe9vx24UDnw1C5B5KzVAtPBnsUefkVBG53",
+                    )
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM students;")
     data = cursor.fetchall()
