@@ -11,16 +11,16 @@ db_user = os.getenv("USER")
 db_password = os.getenv("PASSWORD")
 db_name = os.getenv("DATABASE")
 
-connection = pymysql.connect(host=db_host,
-                    user=db_user,
-                    password=db_password,
-                    database=db_name,
-                    # ssl_mode="VERIFY_IDENTITY",
-                    ssl={
-                        "ca": "cacert.pem"
-                    }
-                    )
-
+def get_db_connection():
+    return pymysql.connect(
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_name,
+        ssl={
+            "ca": "cacert.pem"
+        }
+    )
 
 @app.route('/')
 def index():
@@ -28,6 +28,7 @@ def index():
 
 @app.route('/database')
 def database():
+    connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM students;")
     data = cursor.fetchall()
@@ -43,6 +44,7 @@ def add_student():
         email = request.form['email']
         city = request.form['city']
 
+        connection = get_db_connection()
         cursor = connection.cursor()
         cursor.execute(
             "INSERT INTO students (name, phone, email, city) VALUES (%s, %s, %s, %s)",
@@ -50,6 +52,7 @@ def add_student():
         )
         connection.commit()
         cursor.close()
+        connection.close()
 
         return redirect(url_for('database'))
 
@@ -59,20 +62,16 @@ def add_student():
 def remove_student():
     if request.method == 'POST':
         student_id = request.form['student_id']
+        connection = get_db_connection()
         cursor = connection.cursor()
         cursor.execute("DELETE FROM students WHERE id = %s", (student_id,))
         connection.commit()
         cursor.close()
+        connection.close()
 
         return redirect(url_for('database'))
     else:
         return render_template('remove_student.html')
 
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
