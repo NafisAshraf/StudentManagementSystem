@@ -1,12 +1,12 @@
 from flask import Flask
 
-from dotenv import load_dotenv
-import os
-import MySQLdb
+# from dotenv import load_dotenv
+# import os
+# import MySQLdb
 
 
 app = Flask(__name__)
-load_dotenv()
+# load_dotenv()
 
 
 # connection = MySQLdb.connect(
@@ -27,8 +27,8 @@ import mysql.connector as sql
 
 connection = sql.connect(host="aws.connect.psdb.cloud",
                    database="mydb",
-                   user="bo1sifju3j4baqiwvd1z",
-                   password="pscale_pw_fiVes8i7umh1GKl979nh0kgopinsnYGfifwngf9PUhr",
+                   user="5gas9f8r4es5wgounj1y",
+                   password="pscale_pw_EeQP6Q6aACAEuRnZm6wBOL0AyjNwLEsjr711zcAulaj",
                     )
 
 
@@ -45,3 +45,6 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
