@@ -81,7 +81,7 @@ def remove_student():
 
 
 class LoginForm(FlaskForm):
-    username = StringField('Username', validators=[InputRequired()])
+    email = StringField('Email Adress', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
 
 
@@ -89,8 +89,9 @@ class LoginForm(FlaskForm):
 def form():
     form = LoginForm()
     if form.validate_on_submit():
-        print("Hello World")
-        return f" Username: {form.username.data} Password: {form.password.data} "
+        # print("Hello World")
+        # return f" Username: {form.email.data} Password: {form.password.data} "
+        return render_template('index.html')
 
     return render_template('form.html', form=form)
 
