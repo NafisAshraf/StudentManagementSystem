@@ -91,7 +91,7 @@ def form():
     if form.validate_on_submit():
         # print("Hello World")
         # return f" Username: {form.email.data} Password: {form.password.data} "
-        return render_template('index.html')
+        return redirect(url_for('index.html'))
 
     return render_template('form.html', form=form)
 
