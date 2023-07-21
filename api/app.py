@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField
+from wtforms.validators import InputRequired, Length
 import pymysql
 import os
 from dotenv import load_dotenv
 
 app = Flask(__name__)
 load_dotenv()
+
+app.config['SECRET_KEY'] = "skey"
 
 db_host = os.getenv("HOST")
 db_user = os.getenv("USER")
@@ -72,6 +77,24 @@ def remove_student():
         return redirect(url_for('database'))
     else:
         return render_template('remove_student.html')
+
+
+
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[InputRequired()])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
+
+
+@app.route('/form', methods=['GET', 'POST'])
+def form():
+    form = LoginForm()
+    if form.validate_on_submit():
+        print("Hello World")
+        return f" Username: {form.username.data} Password: {form.password.data} "
+
+    return render_template('form.html', form=form)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
