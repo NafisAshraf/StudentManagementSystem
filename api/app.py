@@ -95,7 +95,21 @@ def form():
 
     return render_template('form.html', form=form)
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
 
+@app.route('/sidebar')
+def sidebar():
+    return render_template('sidebar.html')
+
+@app.route('/tailwind')
+def tailwind():
+    return render_template('tailwind.html')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

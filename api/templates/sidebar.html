@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  
+  <style>
+    /* Custom CSS to hide the offcanvas button on larger screens */
+    @media (min-width: 992px) {
+      .navbar-toggler {
+        display: none;
+      }
+    }
+
+    /* Custom CSS to style the regular vertical navbar */
+    @media (min-width: 992px) {
+
+
+      .navbar-nav {
+        margin-top: 1rem; /* Add some top margin for spacing */
+      }
+
+      .nav-link {
+        color: #ffffff; /* Change the text color */
+      }
+
+
+    }
+
+    .nav-pills li :hover{
+      background-color: #0d6efd;
+
+    }
+
+  </style> 
+</head>
+
+<body>
+    
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="d-flex flex-column justify-content-between col-3 bg-dark min-vh-100">
+            <div class="mt-4">
+              <a class="text-white d-none d-sm-inline text-decoration-none d-flex align-items-center ms-4">
+                <span class="fs-5">Sidemenu</span>
+              </a>
+              <hr class="text-white ">
+                
+                <ul class="nav nav-pills flex-column mt-4 mt-sm-0" id="menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" aria-current="page">
+                            <i class="fa fa-gauge"></i>
+                            <span class="ms-2 d-none d-sm-inline text-center text-sm-start">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" aria-current="page">
+                            <i class="fa fa-house"></i>
+                            <span class="ms-2 d-none d-sm-inline text-center text-sm-start">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#sidemenu" data-bs-toggle="collapse" class="nav-link text-white" aria-current="page">
+                            <i class="fa fa-gauge"></i>
+                            <span class="ms-2 d-none d-sm-inline text-center text-sm-start">Dropdown</span>
+                        </a>
+    
+                        <ul class="nav collapse ms-1 flex-column" id="sidemenu" data-bs-parent="#menu">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Link1</a>
+                            </li>
+                            <li class="nav-item text-white">
+                                <a class="nav-link" href="#">Link2</a>
+                            </li>
+                            <li class="nav-item text-white">
+                                <a class="nav-link" href="#">Link 3</a>
+                            </li>
+                        </ul>
+                    
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white" aria-current="page">
+                                <i class="fa fa-users"></i>
+                                <span class="ms-2 d-none d-sm-inline text-center text-sm-start">Customers</span>
+                            </a>
+                        </li>
+                    
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+              <div class="dropdown open">
+                  <a class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i><span class="ms-2 d-none d-sm-inline text-center text-sm-start">User</span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="triggerId">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item disabled" href="#">Disabled action</a>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        
+
+        </div>
+      </div>
+
+
+
+
+      
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

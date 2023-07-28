@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Dashboard</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    main {
+      /* background-color: lightblue; */
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .user-info {
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      @media (min-width: 992px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      } */
+      
+      
+      .bi {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        }
+
+
+
+/*
+ * Sidebar
+ */
+
+ .sidebar .nav-link {
+  color: #000000;
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+    .sidebar{
+        min-height: 100vh;
+        position: fixed;
+    }
+  .sidebar .offcanvas-lg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+  }
+  .navbar-search {
+    display: block;
+  }
+}
+
+.sidebar .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sidebar .nav-link.active {
+  color: #ffffff;
+  background-color: #0d6efd;
+
+}
+.sidebar .nav-link.active i{
+  color: #ffffff;
+}
+
+/* .sidebar-heading {
+  font-size: .75rem;
+} */
+
+.nav-link:hover {
+    color: #000000;
+    background-color: #f0f0f0; /* Set the background color when hovered */
+    border-radius: 50px; /* Use a large border-radius value to create the pill shape */
+  }
+
+  /* Optional: Change the color of the text when the list item is hovered */
+  .nav-link:hover i {
+    color: #000000; /* Change to the desired text color */
+  }
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+}
+  </style>
+
+</head>
+
+<body>
+    <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+        <a class="navbar-brand d-flex align-items-baseline col-lg-2 me-0 px-3 fs-7 text-white" href="#">
+            <i class="bi bi-mortarboard-fill" style="font-size: x-large; margin-right: 1.2rem;"></i>
+            Student Portal
+        </a>
+      
+        <ul class="navbar-nav flex-row d-lg-none">
+          <li class="nav-item text-nowrap">
+            <button class="nav-link px-3 text-white bg-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search">
+                <i class="bi bi-search custom-icon" ></i>
+            </button>
+          </li>
+          <li class="nav-item text-nowrap">
+            <button class="nav-link px-3 text-white bg-dark border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+          </li>
+        </ul>
+
+        <ul class="d-lg-flex d-sm-none justify-content-end list-unstyled mt-3 me-3">
+            <li class="me-2">
+              <a class="user-info text-decoration-none text-white bg-primary px-3 py-1 rounded-pill" aria-current="page" href="#">Nafis Ashraf</a>
+            </li>
+            <li class="me-2">
+              <a class="user-info text-decoration-none text-white bg-primary px-3 py-1 rounded-pill" aria-current="page" href="#">21301410</a>
+            </li>
+            <li class="">
+              <a class="user-info text-decoration-none text-black bg-white px-3 py-1 rounded-pill" aria-current="page" href="#">Summer 2023</a>
+            </li>
+          </ul>
+      
+        <div id="navbarSearch" class="navbar-search w-100 collapse">
+          <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+        </div>
+      </header>
+      
+      <div class="container-fluid">
+        <div class="row">
+
+
+          <!-- SIDEBAR -->
+          <div class="sidebar border border-0 col-lg-2 p-0 bg-body-tertiary bg-light">
+
+            <!-- OFF CANVAS HEADER -->
+            <div class="offcanvas-lg offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+              <div class="offcanvas-header">
+                
+                <a class="d-flex align-items-baseline col-lg-2 me-0 px-0 fs-7" style="background-color: transparent; text-decoration: none; color: #000000;" href="#">
+                    <i class="bi bi-mortarboard-fill me-3" style="font-size: x-large;"></i>
+                    <h5 class="offcanvas-title" id="sidebarMenuLabel">Student Portal</h5>
+                </a>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+              </div>
+
+            <!-- SIDEBAR MENU -->
+              <div class="offcanvas-body d-lg-flex flex-column p-0 pt-lg-3 mx-2 overflow-y-auto">
+                <ul class="nav flex-column">
+                    <li class="nav-item my-1">
+                        <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="dashboard" href="#">
+                          <i class="bi bi-house-fill" style="font-size: medium;"></i>
+                          Dashboard
+                        </a>
+                    </li>
+                  <li class="nav-item my-1">
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill active" data-menu="profile" href="#">
+                        <i class="bi bi-person-fill" style="font-size: medium;"></i>
+                      Profile
+                    </a>
+                  </li>
+                  <li class="nav-item my-1">
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="gradesheet" href="#">
+                        <i class="bi bi-file-earmark-bar-graph-fill" style="font-size: medium;"></i>
+                      Gradesheet
+                    </a>
+                  </li>
+                  <li class="nav-item my-1">
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="faculty-info" href="#">
+                        <i class="bi bi-person-vcard-fill" style="font-size: medium;"></i>
+                      Faculty Info
+                    </a>
+                  </li>
+                  <li class="nav-item my-1">
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="advising" href="#">
+                        <i class="bi bi-card-checklist" style="font-size: medium;"></i>
+                      Advising
+                    </a>
+                  </li>
+                  <li class="nav-item my-1">
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="payment" href="#">
+                        <i class="bi bi-credit-card-fill" style="font-size: medium;"></i>
+                      Payment
+                    </a>
+                  </li>
+                  <li class="nav-item my-1">
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="payment" href="#">
+                        <i class="bi bi-people-fill" style="font-size: medium;"></i>
+                      Clubs
+                    </a>
+                  </li>
+
+                  <li class="nav-item mt-lg-auto" >
+                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="sign-out" href="#">
+                        <i class="bi bi-box-arrow-right" style="font-size: medium;"></i> 
+                        Sign Out
+                    </a>
+                  </li>
+                </ul>
+                       
+              </div>
+            </div>
+          </div>
+      
+
+          <!-- CONTENT -->
+          <main class="ms-sm-auto col-lg-10 px-lg-4">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h2>Program Information</h2>
+                      </div>
+
+                      <!-- <h2>Section title</h2> -->
+                      <div class="container mt-2">
+                    
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label class="form-label">Program:</label>
+                              <p class="form-control-static bg-light p-2 rounded">Bachelor of Science in Computer Science and Engineering</p>
+                            </div>
+                            <!-- Add more information fields as needed -->
+                          </div>
+
+                          
+                          <!-- Second Column -->
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label class="form-label">Joining Date:</label>
+                              <p class="form-control-static bg-light p-2 rounded">Summer 2021</p>
+                            </div>
+                            <!-- Add more information fields as needed -->
+                          </div>
+                        </div>                      
+                </div>
+            </div>
+
+
+
+                <div class="row">
+
+                    <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        
+                        <h2>User Profile</h2>
+                        <!-- <div class="btn-toolbar mb-2 mb-lg-0">
+                          <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                          </div>
+                          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
+                            This week
+                          </button>
+                        </div> -->
+                      </div>
+
+                      <!-- <h2>Section title</h2> -->
+                      <div class="container mt-2">
+                    
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label class="form-label">Name:</label>
+                              <p class="form-control-static bg-light p-2 rounded">Nafis Ashraf</p>
+                            </div>
+                    
+                            <div class="mb-3">
+                              <label class="form-label">ID:</label>
+                              <p class="form-control-static bg-light p-2 rounded">21301410</p>
+                            </div>
+                    
+                            <div class="mb-3">
+                              <label class="form-label">Date of Birth:</label>
+                              <p class="form-control-static bg-light p-2 rounded">November 30, 2001</p>
+                            </div>
+                    
+                            <div class="mb-3">
+                              <label class="form-label">Nationality:</label>
+                              <p class="form-control-static bg-light p-2 rounded">Bangladesh</p>
+                            </div>
+                    
+                            <!-- Add more information fields as needed -->
+                    
+                          </div>
+
+                          
+                          <!-- Second Column -->
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label class="form-label">Gender:</label>
+                              <p class="form-control-static bg-light p-2 rounded">Male</p>
+                            </div>
+                    
+                            <div class="mb-3">
+                              <label class="form-label">Place of Birth:</label>
+                              <p class="form-control-static bg-light p-2 rounded">Dhaka, Bangladesh</p>
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="form-label">Mobile Number:</label>
+                              <p class="form-control-static bg-light p-2 rounded">01977017823</p>
+                            </div>
+
+                            <div class="mb-3">
+                              <label class="form-label">Email</label>
+                              <p class="form-control-static bg-light p-2 rounded">nafis.ashraf.roudra@g.bracu.ac.bd</p>
+                            </div>
+                    
+                            <!-- Add more information fields as needed -->
+                    
+                          </div>
+                        </div>                      
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2>Educational Information</h2>
+                  </div>
+
+                  <div class="container mt-2 mb-5">
+                    
+                    <!-- O levels info -->
+                    <h4>O'Levels</h4>
+                
+                    <div class="row">
+                      
+                        <!-- First Column -->
+                        <div class="col-md-3">
+                        <div class="mb-3">
+                          <label class="form-label">Educational Institute:</label>
+                          <p class="form-control-static bg-light p-2 rounded">Academia</p>
+                        </div>
+                      </div>
+
+                      
+                      <!-- Second Column -->
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label class="form-label">Passing Year:</label>
+                          <p class="form-control-static bg-light p-2 rounded">2018</p>
+                        </div>
+                      </div>
+
+                      <!-- Third Column -->
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label class="form-label">Cumulative GPA:</label>
+                          <p class="form-control-static bg-light p-2 rounded">5.0</p>
+                        </div>
+                      </div>
+
+                      <!-- Fourth Column -->
+                      <div class="col-md-3">
+                        <div class="mb-3">
+                          <label class="form-label">Medium:</label>
+                          <p class="form-control-static bg-light p-2 rounded">English</p>
+                        </div>
+                      </div>
+
+                    </div>
+                    
+                    
+                    <!-- A levels info -->
+                    <h4>A'Levels</h4>
+                                    
+                    <div class="row">
+                    
+                        <!-- First Column -->
+                        <div class="col-md-3">
+                        <div class="mb-3">
+                        <label class="form-label">Educational Institute:</label>
+                        <p class="form-control-static bg-light p-2 rounded">Academia</p>
+                        </div>
+                    </div>
+
+                    
+                    <!-- Second Column -->
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                        <label class="form-label">Passing Year:</label>
+                        <p class="form-control-static bg-light p-2 rounded">2020</p>
+                        </div>
+                    </div>
+
+                    <!-- Third Column -->
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                        <label class="form-label">Cumulative GPA:</label>
+                        <p class="form-control-static bg-light p-2 rounded">5.0</p>
+                        </div>
+                    </div>
+
+                    <!-- Fourth Column -->
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                        <label class="form-label">Medium:</label>
+                        <p class="form-control-static bg-light p-2 rounded">English</p>
+                        </div>
+                    </div>
+
+                    </div>
+                    
+            </div>
+        </div>
+            
+      
+        </div>
+            
+          </main>
+        </div>
+      </div>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+<script>
+    // JavaScript code to handle sidebar menu active state
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all sidebar menu items
+      const sidebarItems = document.querySelectorAll(".nav-link[data-menu]");
+  
+      // Find the default active menu and remove its "active" class
+      const defaultActiveItem = document.querySelector(".nav-link.active[data-menu]");
+      if (defaultActiveItem) {
+        defaultActiveItem.classList.remove("active");
+      }
+  
+      // Add click event listeners to each menu item
+      sidebarItems.forEach(item => {
+        item.addEventListener("click", function (event) {
+          event.preventDefault();
+  
+          // Remove the "active" class from all menu items
+          sidebarItems.forEach(item => {
+            item.classList.remove("active");
+          });
+  
+          // Add the "active" class to the clicked menu item
+          this.classList.add("active");
+        });
+      });
+  
+      // Set "Dashboard" menu as active by default
+      if (defaultActiveItem) {
+        defaultActiveItem.classList.add("active");
+      }
+    });
+  </script>
+</body>
+
+</html>
