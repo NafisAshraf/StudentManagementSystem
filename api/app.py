@@ -95,6 +95,10 @@ def form():
 
     return render_template('form.html', form=form)
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
 
 
 if __name__ == '__main__':
