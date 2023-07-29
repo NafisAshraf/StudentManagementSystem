@@ -3,6 +3,7 @@
 
 <head>
   <title>Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' class='bi bi-mortarboard-fill' viewBox='0 0 16 16'%3E%3Cpath d='M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z'/%3E%3Cpath d='M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z'/%3E%3C/svg%3E">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +16,11 @@
   <style>
     main {
       /* background-color: lightblue; */
+    }
+
+    label {
+      font-weight: 600;
+      padding-left: 0.4rem;
     }
 
     .bd-placeholder-img {
@@ -191,7 +197,7 @@
           </li>
         </ul>
 
-        <ul class="d-lg-flex d-sm-none justify-content-end list-unstyled mt-3 me-3">
+        <ul class="d-lg-flex d-none justify-content-end list-unstyled mt-3 me-3">
             <li class="me-2">
               <a class="user-info text-decoration-none text-white bg-primary px-3 py-1 rounded-pill" aria-current="page" href="#">Nafis Ashraf</a>
             </li>
@@ -227,8 +233,8 @@
               </div>
 
             <!-- SIDEBAR MENU -->
-              <div class="offcanvas-body d-lg-flex flex-column p-0 pt-lg-3 mx-2 overflow-y-auto">
-                <ul class="nav flex-column">
+              <div class="offcanvas-body d-lg-flex flex-column p-0 pt-lg-3 mx-2 overflow-y-auto" style="height: 90vh;">
+                <ul class="nav flex-column mb-auto">
                     <li class="nav-item my-1">
                         <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="dashboard" href="#">
                           <i class="bi bi-house-fill" style="font-size: medium;"></i>
@@ -272,13 +278,17 @@
                     </a>
                   </li>
 
-                  <li class="nav-item mt-lg-auto" >
-                    <a class="nav-link d-flex align-items-baseline gap-2 rounded-pill" data-menu="sign-out" href="#">
+                  <li class="nav-item" >
+                    
+                  </li>
+                </ul>
+                <div class="me-2 mb-1">
+                    <hr>
+                    <a class="nav-link d-flex align-items-baseline py-2 pe-2 ps-3 gap-2 rounded-pill" data-menu="sign-out" href="#">
                         <i class="bi bi-box-arrow-right" style="font-size: medium;"></i> 
                         Sign Out
                     </a>
-                  </li>
-                </ul>
+                </div>
                        
               </div>
             </div>
@@ -326,7 +336,7 @@
 
                     <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         
-                        <h2>User Profile</h2>
+                        <h2>Student Information</h2>
                         <!-- <div class="btn-toolbar mb-2 mb-lg-0">
                           <div class="btn-group me-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
