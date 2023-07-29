@@ -13,15 +13,46 @@
 
   <style>
 
+    .dragging {
+      background-color: blueviolet;
+    }
+
   </style>
 </head>
 
 <body>
   
-  <div class="d-flex align-items-start flex-column mb-3" style="height: 100vh;">
-    <div class="mb-auto p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
-    <div class="p-2">Flex item</div>
+  <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+
+    <h3>Container 1</h3>
+
+    <div class="container d-flex flex-column bg-primary text-white align-items my-4">
+      <p class="draggable bg-warning p-2 mt-3 rounded-4 text-center text-white fw-bolder fs-4" draggable="true">
+        1
+      </p>
+      <p class="draggable bg-danger p-2 mt-3 rounded-4 text-center text-white fw-bolder fs-4" draggable="true">
+        2
+      </p>
+      <p class="draggable bg-black p-2 mt-3 rounded-4 text-center text-white fw-bolder fs-4" draggable="true">
+        3
+      </p>
+
+    </div>
+    
+    <h3>Container 2</h3>
+    <div class="container d-flex flex-column bg-primary text-white align-items my-4">
+      <p class="draggable bg-warning p-2 mt-3 rounded-4 text-center text-white fw-bolder fs-4" draggable="true">
+        a
+      </p>
+      <p class="draggable bg-warning p-2 mt-3 rounded-4 text-center text-white fw-bolder fs-4" draggable="true">
+        b
+      </p>
+      <p class="draggable bg-warning p-2 mt-3 rounded-4 text-center text-white fw-bolder fs-4" draggable="true">
+        c
+      </p>
+    </div>
+    
+
   </div>
   
 
@@ -29,6 +60,35 @@
 
 
   <!-- Bootstrap JavaScript Libraries -->
+
+  <script>
+    const draggables = document.querySelectorAll('.draggable');
+    const containers = document.querySelectorAll('.container');
+
+
+    draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', () => {
+        draggable.classList.add('dragging');
+        
+      });
+
+      draggable.addEventListener('dragend', () => {
+        draggable.classList.remove('dragging');
+      });
+
+    });
+
+    containers.forEach(container => {
+      container.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const draggable = document.querySelector('.dragging');
+        container.appendChild(draggable);
+
+      });
+    });
+  </script>
+
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-o2XKLYnMu5ViJCXHlGN6pP10UFaDIg2sa2FMm5Kp/rU=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
