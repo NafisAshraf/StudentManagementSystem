@@ -31,52 +31,52 @@ def get_db_connection():
 def index():
     return render_template('index.html')
 
-@app.route('/database')
-def database():
-    connection = get_db_connection()
-    cursor = connection.cursor()
-    cursor.execute("SELECT * FROM students;")
-    data = cursor.fetchall()
-    cursor.close()
-    connection.close()
-    return render_template('database.html', students=data)
+# @app.route('/database')
+# def database():
+#     connection = get_db_connection()
+#     cursor = connection.cursor()
+#     cursor.execute("SELECT * FROM students;")
+#     data = cursor.fetchall()
+#     cursor.close()
+#     connection.close()
+#     return render_template('database.html', students=data)
 
-@app.route('/add_student', methods=['GET', 'POST'])
-def add_student():
-    if request.method == 'POST':
-        name = request.form['name']
-        phone = request.form['phone']
-        email = request.form['email']
-        city = request.form['city']
+# @app.route('/add_student', methods=['GET', 'POST'])
+# def add_student():
+#     if request.method == 'POST':
+#         name = request.form['name']
+#         phone = request.form['phone']
+#         email = request.form['email']
+#         city = request.form['city']
 
-        connection = get_db_connection()
-        cursor = connection.cursor()
-        cursor.execute(
-            "INSERT INTO students (name, phone, email, city) VALUES (%s, %s, %s, %s)",
-            (name, phone, email, city)
-        )
-        connection.commit()
-        cursor.close()
-        connection.close()
+#         connection = get_db_connection()
+#         cursor = connection.cursor()
+#         cursor.execute(
+#             "INSERT INTO students (name, phone, email, city) VALUES (%s, %s, %s, %s)",
+#             (name, phone, email, city)
+#         )
+#         connection.commit()
+#         cursor.close()
+#         connection.close()
 
-        return redirect(url_for('database'))
+#         return redirect(url_for('database'))
 
-    return render_template('add_student.html')
+#     return render_template('add_student.html')
 
-@app.route('/remove_student', methods=['GET', 'POST'])
-def remove_student():
-    if request.method == 'POST':
-        student_id = request.form['student_id']
-        connection = get_db_connection()
-        cursor = connection.cursor()
-        cursor.execute("DELETE FROM students WHERE id = %s", (student_id,))
-        connection.commit()
-        cursor.close()
-        connection.close()
+# @app.route('/remove_student', methods=['GET', 'POST'])
+# def remove_student():
+#     if request.method == 'POST':
+#         student_id = request.form['student_id']
+#         connection = get_db_connection()
+#         cursor = connection.cursor()
+#         cursor.execute("DELETE FROM students WHERE id = %s", (student_id,))
+#         connection.commit()
+#         cursor.close()
+#         connection.close()
 
-        return redirect(url_for('database'))
-    else:
-        return render_template('remove_student.html')
+#         return redirect(url_for('database'))
+#     else:
+#         return render_template('remove_student.html')
 
 
 
@@ -99,9 +99,11 @@ def form():
 def test():
     return render_template('test.html')
 
-@app.route('/sidebar')
-def sidebar():
-    return render_template('sidebar.html')
+@app.route('/practice')
+def practice():
+    teachers = [[0, 'Mr. Smith', 'Math', 1], [1, 'Mrs. Jones', 'English', 2], [2, 'Dr. Brown', 'Science', 8]]
+    addTeachers = [[3, 'ABC', 'CS', 3], [4, 'EFG', 'BBA', 6]]
+    return render_template('practice.html', teachers=teachers, addTeachers=addTeachers)
 
 @app.route('/tailwind')
 def tailwind():

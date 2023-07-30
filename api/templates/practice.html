@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Practice</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <style>
+    .dropzone tbody tr:hover {
+      cursor: pointer;
+      background-color: #f8f9fa; /* Replace this with your desired background color */
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <div class="container-fluid d-flex justify-content-evenly">
+
+    <table class="dropzone table border m-5">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Teacher Name</th>
+          <th scope="col">Course</th>
+          <th scope="col">Section</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teachers %}
+        <tr class="draggable" draggable="true">
+            <td>{{ teacher[0] }}</td>
+            <td>{{ teacher[1] }}</td>
+            <td>{{ teacher[2] }}</td>
+            <td>{{ teacher[3] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
+
+    <table class="dropzone table border m-5">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Teacher Name</th>
+          <th scope="col">Course</th>
+          <th scope="col">Section</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for addTeacher in addTeachers %}
+        <tr class="draggable" draggable="true">
+            <td>{{ addTeacher[0] }}</td>
+            <td>{{ addTeacher[1] }}</td>
+            <td>{{ addTeacher[2] }}</td>
+            <td>{{ addTeacher[3] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+
+
+  <script>
+    const draggables = document.querySelectorAll('.dropzone tbody tr');
+    const dropzones = document.querySelectorAll('.dropzone tbody');
+
+
+    draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', () => {
+        draggable.classList.add('dragging');
+        
+      });
+
+      draggable.addEventListener('dragend', () => {
+        draggable.classList.remove('dragging');
+      });
+
+    });
+
+    dropzones.forEach(dropzone => {
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const draggable = document.querySelector('.dragging');
+        dropzone.appendChild(draggable);
+        console.log(draggable);
+
+      });
+    });
+  </script>
+  
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

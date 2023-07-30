@@ -3,67 +3,211 @@
     {% block content %}
 
             
-            <div class="nav nav-pills col-lg-6 justify-content-lg-center">
-              <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Welcome</a>
-              <a class="nav-link" href="{{url_for('add_student')}}">Add Student</a>
-              <a class="nav-link" href="{{url_for('remove_student')}}">Remove Student</a>
-              <a class="nav-link" href="{{url_for('database')}}">Database</a>
+    <div class="container">
 
+      <div class="row">
+
+          <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h2>Program Information</h2>
             </div>
 
-            <div class="nav-item dropdown ms-auto">
-                <a href="#" class="nav-link dropdown-toggle text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/NafisAshraf/StudentManagementSystem/assets/134098048/1df3f814-5d2f-47a1-b0e2-e698c34786ba" alt="mdo" width="32" height="32" class="rounded-circle">
-                  </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">New project</a></li>
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
+            <!-- <h2>Section title</h2> -->
+            <div class="container mt-2">
+          
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Program:</label>
+                    <p class="form-control-static bg-light p-2 rounded">Bachelor of Science in Computer Science and Engineering</p>
+                  </div>
+                  <!-- Add more information fields as needed -->
+                </div>
+
+                
+                <!-- Second Column -->
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Joining Date:</label>
+                    <p class="form-control-static bg-light p-2 rounded">Summer 2021</p>
+                  </div>
+                  <!-- Add more information fields as needed -->
+                </div>
+              </div>                      
+      </div>
+  </div>
+
+
+
+      <div class="row">
+
+          <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              
+              <h2>Student Information</h2>
+              <!-- <div class="btn-toolbar mb-2 mb-lg-0">
+                <div class="btn-group me-2">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                </div>
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle d-flex align-items-center gap-1">
+                  This week
+                </button>
+              </div> -->
+            </div>
+
+            <!-- <h2>Section title</h2> -->
+            <div class="container mt-2">
+          
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <p class="form-control-static bg-light p-2 rounded">Nafis Ashraf</p>
+                  </div>
+          
+                  <div class="mb-3">
+                    <label class="form-label">ID:</label>
+                    <p class="form-control-static bg-light p-2 rounded">21301410</p>
+                  </div>
+          
+                  <div class="mb-3">
+                    <label class="form-label">Date of Birth:</label>
+                    <p class="form-control-static bg-light p-2 rounded">November 30, 2001</p>
+                  </div>
+          
+                  <div class="mb-3">
+                    <label class="form-label">Nationality:</label>
+                    <p class="form-control-static bg-light p-2 rounded">Bangladesh</p>
+                  </div>
+          
+                  <!-- Add more information fields as needed -->
+          
+                </div>
+
+                
+                <!-- Second Column -->
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Gender:</label>
+                    <p class="form-control-static bg-light p-2 rounded">Male</p>
+                  </div>
+          
+                  <div class="mb-3">
+                    <label class="form-label">Place of Birth:</label>
+                    <p class="form-control-static bg-light p-2 rounded">Dhaka, Bangladesh</p>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Mobile Number:</label>
+                    <p class="form-control-static bg-light p-2 rounded">01977017823</p>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <p class="form-control-static bg-light p-2 rounded">nafis.ashraf.roudra@g.bracu.ac.bd</p>
+                  </div>
+          
+                  <!-- Add more information fields as needed -->
+          
+                </div>
+              </div>                      
+      </div>
+  </div>
+
+
+  <div class="row">
+
+      <div class="d-flex justify-content-between flex-wrap flex-lg-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h2>Educational Information</h2>
+        </div>
+
+        <div class="container mt-2 mb-5">
+          
+          <!-- O levels info -->
+          <h4>O'Levels</h4>
+      
+          <div class="row">
+            
+              <!-- First Column -->
+              <div class="col-md-3">
+              <div class="mb-3">
+                <label class="form-label">Educational Institute:</label>
+                <p class="form-control-static bg-light p-2 rounded">Academia</p>
+              </div>
+            </div>
+
+            
+            <!-- Second Column -->
+            <div class="col-md-3">
+              <div class="mb-3">
+                <label class="form-label">Passing Year:</label>
+                <p class="form-control-static bg-light p-2 rounded">2018</p>
+              </div>
+            </div>
+
+            <!-- Third Column -->
+            <div class="col-md-3">
+              <div class="mb-3">
+                <label class="form-label">Cumulative GPA:</label>
+                <p class="form-control-static bg-light p-2 rounded">5.0</p>
+              </div>
+            </div>
+
+            <!-- Fourth Column -->
+            <div class="col-md-3">
+              <div class="mb-3">
+                <label class="form-label">Medium:</label>
+                <p class="form-control-static bg-light p-2 rounded">English</p>
+              </div>
+            </div>
+
+          </div>
+          
+          
+          <!-- A levels info -->
+          <h4>A'Levels</h4>
+                          
+          <div class="row">
+          
+              <!-- First Column -->
+              <div class="col-md-3">
+              <div class="mb-3">
+              <label class="form-label">Educational Institute:</label>
+              <p class="form-control-static bg-light p-2 rounded">Academia</p>
               </div>
           </div>
-        </div>
-      </nav>
 
-
-
-
-      <div class="container py-3">
-    
-        <div class="p-5 mb-4 bg-body-tertiary rounded-3 border">
-          <div class="container-fluid">
-            <h2>Student Database</h2>
-            <p class="col-md-8 fs-4">Click the button below to view the student database.</p>
-            <a class="btn btn-primary btn-lg" type="button" href="{{url_for('database')}}">Click Here</a>
+          
+          <!-- Second Column -->
+          <div class="col-md-3">
+              <div class="mb-3">
+              <label class="form-label">Passing Year:</label>
+              <p class="form-control-static bg-light p-2 rounded">2020</p>
+              </div>
           </div>
-        </div>
-    
-        <div class="row align-items-md-stretch">
-          <div class="col-md-6">
-            <div class="h-100 p-5 text-bg-dark rounded-3">
-              <h2>Add Student</h2>
-              <p>Click the button below to add student info into the database</p>
-              <a class="btn btn-outline-light" type="button" href="{{url_for('add_student')}}">Click Here</a>
-            </div>
+
+          <!-- Third Column -->
+          <div class="col-md-3">
+              <div class="mb-3">
+              <label class="form-label">Cumulative GPA:</label>
+              <p class="form-control-static bg-light p-2 rounded">5.0</p>
+              </div>
+          </div>
+
+          <!-- Fourth Column -->
+          <div class="col-md-3">
+              <div class="mb-3">
+              <label class="form-label">Medium:</label>
+              <p class="form-control-static bg-light p-2 rounded">English</p>
+              </div>
+          </div>
 
           </div>
-          <div class="col-md-6">
-            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-              <h2>Remove Student</h2>
-              <p>Click the button below to remove student info from the database</p>
-              <a class="btn btn-outline-secondary" type="button" href="{{url_for('remove_student')}}">Click Here</a>
-            </div>
-          </div>
-        </div>
-    
-        <footer class="pt-3 mt-4 text-body-secondary border-top">
-          © 2023
-        </footer>
-      </div>
+          
+  </div>
+</div>
+  
 
-    </div>
+</div>
 
     {% endblock %}
  
